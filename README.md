@@ -8,7 +8,7 @@ Tests for read only memoryviews in Cython (see [cython/cython#1869](https://gith
 1. Clone this repository
 3. (optional) Setup a virtual env,
    ```
-   conda create -y -n cython-dev-env numpy python=3.6
+   conda create -y -n cython-dev-env pytest numpy python=3.6
    conda activate cython-dev-env
    ```
 3. [Install the dev version of Cython](http://cython.readthedocs.io/en/latest/src/quickstart/install.html) from [cython#1869](https://github.com/cython/cython/pull/1869):
