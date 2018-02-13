@@ -1,0 +1,6 @@
+*.c
+build
+*.so
+.cache/
+__pycache__/
+cython_debug/
