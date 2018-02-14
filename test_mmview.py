@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 from mmview import getmax, update_array
-from mmview import getconst
+from mmview import getconst, outer_func
 
 
 @pytest.fixture
@@ -40,3 +40,17 @@ def test_const_mmview_ro(x):
     x.setflags(write=False)
     assert x.flags.writeable is False
     getconst(x)
+
+
+def test_passing_func_rw(x):
+    y = outer_func(x)
+    assert y[0] == -99.
+    assert y.base.flags.writeable is True
+
+
+def test_passing_func_ro(x):
+    x.setflags(write=False)
+    assert x.flags.writeable is False
+    y = outer_func(x)
+    assert y[0] == -99.
+    assert y.base.flags.writeable is False
